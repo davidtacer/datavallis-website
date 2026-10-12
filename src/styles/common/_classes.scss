@@ -1,0 +1,70 @@
+@use '../helpers' as *;
+
+.hide {
+  display: none !important;
+}
+
+.green-f {
+  color: $primary;
+}
+
+.line {
+  height: 1px;
+  background-color: white;
+  width: 1362px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 769px) and (max-width: 1422px) {
+    width: calc(100% - 60px);
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+@include desktop() {
+  .p-l {
+    padding-left: $space-large;
+  }
+
+  .p-r {
+    padding-right: $space-large;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none !important;
+  }
+}
+
+@include mobile() {
+  .flex-m {
+    display: flex;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
+
+.bg-reveal {
+  opacity: 0;
+}

@@ -1,0 +1,304 @@
+@use '../helpers' as *;
+
+/* ---------- dv-home-page ---------- */
+.dv-home-page {
+  > .bg-reveal {
+    width: 100%;
+    height: auto;
+
+    @include mobile() {
+      display: none;
+    }
+  }
+
+  > .side-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-index-overlay;
+    background-color: transparent;
+    height: 100%;
+    width: 0;
+    transition: 0.5s ease-in-out all;
+
+    &.animate {
+      width: 100%;
+      background-color: black;
+    }
+  }
+}
+
+/* ---------- dv-about ---------- */
+.dv-about {
+  padding-top: 165px;
+  padding-bottom: 218px;
+  display: block;
+
+  @include mobile() {
+    padding-top: 84px;
+    padding-bottom: 94px;
+
+    h3 {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+/* ---------- dv-services ---------- */
+.dv-services {
+  padding-bottom: 228px;
+  padding-top: 163px;
+  display: block;
+
+  @include mobile() {
+    padding-top: 70px;
+    padding-bottom: 94px;
+  }
+
+  h3 {
+    margin-bottom: 135px;
+
+    @include mobile() {
+      margin-bottom: 50px;
+    }
+  }
+
+  .h6 {
+    line-height: 40px;
+    text-transform: uppercase;
+
+    @include mobile() {
+      line-height: 30px;
+      letter-spacing: 1.4px;
+    }
+  }
+
+  p {
+    margin-top: 32px;
+
+    @include mobile() {
+      font-size: $font-m-small;
+      line-height: 25px;
+      margin-top: 30px;
+    }
+  }
+
+  @include desktop() {
+    .item:not(:last-child) {
+      margin-right: 60px;
+    }
+  }
+
+  @include mobile() {
+    .item:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+/* ---------- dv-products ---------- */
+.dv-products {
+  display: block;
+  padding: 215px 0;
+
+  @include mobile() {
+    padding: 94px 0;
+  }
+
+  @include desktop() {
+    .products {
+      padding-right: 135px;
+    }
+  }
+
+  @include mobile() {
+    .dv-vertical-title {
+      margin-bottom: 50px;
+      display: block;
+    }
+
+    .item > p {
+      font-size: $font-m-small;
+      line-height: 25px;
+    }
+  }
+
+  .item {
+    > .h6 {
+      margin-bottom: 36px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      @include mobile() {
+        letter-spacing: 1.4px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .product-name {
+      margin: 40px 0;
+      padding-top: 0;
+      top: 0;
+
+      @include mobile() {
+        margin: 30px 0;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 100px;
+
+      @include mobile() {
+        margin-bottom: 85px;
+      }
+    }
+  }
+}
+
+/* ---------- dv-technologies ---------- */
+.dv-technologies {
+  .tech-wrapper {
+    padding: 233px 0 209px 0;
+    padding-left: calc(50% - 681px);
+
+    @include mobile() {
+      padding: 93px 0;
+    }
+  }
+
+  .h4 {
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-right: 120px;
+    white-space: nowrap;
+
+    @include mobile() {
+      margin-right: 50px;
+    }
+  }
+}
+
+/* ---------- dv-experiences ---------- */
+.dv-experiences {
+  padding-top: 230px;
+  display: block;
+
+  @include mobile() {
+    padding-top: 94px;
+    padding-bottom: 87px;
+
+    .dv-vertical-title {
+      margin-bottom: 50px;
+      height: auto !important;
+    }
+  }
+
+  .experience-title {
+    margin-bottom: 36px;
+
+    @include mobile() {
+      margin-bottom: 30px;
+    }
+  }
+
+  .acc-body p {
+    margin-bottom: 52px;
+  }
+
+  .dv-accordion:not(:last-child) {
+    margin-bottom: 100px;
+
+    @include mobile() {
+      margin-bottom: 90px;
+    }
+  }
+}
+
+/* ---------- dv-contact-cta ---------- */
+@keyframes pulsating {
+  0% {
+    color: $light;
+  }
+  25% {
+    color: $yellow;
+  }
+  50% {
+    color: $primary;
+  }
+  75% {
+    color: $green;
+  }
+  100% {
+    color: $light;
+  }
+}
+
+.dv-contact-cta {
+  padding-top: 222px;
+  padding-bottom: 173px;
+  display: block;
+  text-align: center;
+
+  @include mobile() {
+    padding: 94px 0;
+  }
+
+  > .h6 {
+    letter-spacing: 1.75px;
+
+    @include mobile() {
+      margin-bottom: 28px;
+    }
+  }
+
+  > a {
+    position: relative;
+    display: block;
+
+    label {
+      position: absolute;
+      font-family: $title;
+      font-size: 74px;
+      line-height: 78px;
+      opacity: 0;
+      transition: 0.2s ease-in-out opacity;
+      text-align: left;
+
+      &.left {
+        bottom: 0;
+        left: 0;
+      }
+
+      &.right {
+        top: 48px;
+        right: 0;
+      }
+
+      @include mobile() {
+        font-size: 40px;
+        line-height: 42px;
+        display: block;
+        position: unset;
+        opacity: 0.5;
+
+        animation-name: pulsating;
+        animation-duration: 7s;
+        animation-iteration-count: infinite;
+
+        &.right {
+          text-align: right;
+        }
+      }
+    }
+
+    &:hover {
+      label {
+        opacity: 0.7;
+      }
+
+      .h1 {
+        color: $primary;
+      }
+    }
+  }
+}

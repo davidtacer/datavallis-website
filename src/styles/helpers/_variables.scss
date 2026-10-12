@@ -1,0 +1,58 @@
+/**
+* Fonts
+*/
+$title: 'matchboook';
+$body: 'proximanova';
+
+/**
+* Desktop typography
+*/
+$font-h1: 400px;
+$font-h2: 230px;
+$font-h3: 150px;
+$font-h4: 87px;
+$font-h5: 50px;
+$font-h6: 25px;
+$font-large: 18px;
+$font-small: 16px;
+
+/**
+* Mobile typography
+*/
+$font-m-h1: 200px;
+$font-m-h2: 130px;
+$font-m-h3: 80px;
+$font-m-h4: 60px;
+$font-m-h5: 30px;
+$font-m-h6: 20px;
+$font-m-large: 16px;
+$font-m-small: 14px;
+
+/**
+* Colors
+*/
+$primary: #84d860;
+$green: #1db682;
+$yellow: #feef2f;
+$beige: #c3ac86;
+$light: #ffffff;
+$dark: #000000;
+$red: #b51c1c;
+
+/**
+* Spacings
+*/
+$space-base: 36px;
+$space-large: 140px;
+
+$container: 1640px;
+
+/**
+* Z-indexes
+*/
+$z-index-base: 1;
+$z-index-background: $z-index-base - 1;
+$z-index-overlay: $z-index-base + 1;
+$z-index-navigation: 100;
+$z-index-loader: $z-index-navigation - 1;
+$z-index-cursor: 1000;

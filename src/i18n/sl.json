@@ -1,0 +1,25 @@
+{
+  "actions": {
+    "seeMore": "Preberi več"
+  },
+  "menu": {
+    "about": "O nas",
+    "products": "Produkti",
+    "experience": "Izkušnje",
+    "team": "Ekipa",
+    "news": "Novice",
+    "careers": "Zaposlitev",
+    "davidtacer": "davidtacer.com",
+    "cta": {
+      "contact": "Let's talk",
+      "follow": "Follow us"
+    }
+  },
+  "home": {
+    "title": "Raziskuj našo <br> dolino podatkov!",
+    "aboutUs": "o nas",
+    "ourServices": "naše storitve",
+    "ourProducts": "naši produkti",
+    "experiences": "industry experiences"
+  }
+}

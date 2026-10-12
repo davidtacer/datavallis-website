@@ -1,0 +1,57 @@
+@use '../helpers' as *;
+
+body,
+html {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  font-family: $body;
+  font-size: $font-small;
+  background-color: $dark;
+  color: $light;
+}
+
+* {
+  box-sizing: border-box;
+  cursor: none !important;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a,
+.pointer {
+  position: relative;
+  padding-top: 10px;
+  top: -10px;
+
+  @include mobile() {
+    padding-top: 0;
+    top: 0;
+  }
+}
+
+p {
+  line-height: 40px;
+  letter-spacing: 0.9px;
+  margin: 0;
+  font-size: $font-large;
+
+  @include mobile() {
+    font-size: $font-m-large;
+    line-height: 30px;
+    letter-spacing: 0.8px;
+  }
+}

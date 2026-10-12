@@ -1,0 +1,63 @@
+@use '../helpers' as *;
+
+$container-padding: 30px;
+
+.container {
+  width: calc(#{$container} + (2 * #{$container-padding}));
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding: 0 $container-padding;
+
+  @include mobile() {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.content {
+  width: 1362px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+
+  @media (min-width: 769px) and (max-width: 1422px) {
+    padding-left: 50px;
+    padding-right: 30px;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .even {
+    width: calc(50% - #{$space-base}/ 2);
+  }
+
+  .uneven {
+    width: 60px;
+    margin-left: $space-base;
+  }
+}
+
+.half {
+  width: 50%;
+  min-width: 50%;
+  max-width: 50%;
+
+  @include mobile() {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+.space-l-l {
+  padding-left: $space-large;
+}
+
+.space-l-r {
+  padding-right: $space-large;
+}

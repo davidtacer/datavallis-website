@@ -1,0 +1,134 @@
+{
+  "actions": {
+    "seeMore": "See more",
+    "learnMore": "Learn more",
+    "accept": "accept"
+  },
+  "menu": {
+    "about": "About",
+    "products": "Products",
+    "experience": "Experience",
+    "team": "Our company",
+    "news": "News",
+    "allNews": "All news",
+    "careers": "Careers",
+    "davidtacer": "davidtacer.com",
+    "services": "Services",
+    "technologies": "Technologies",
+    "home": "Home",
+    "cta": {
+      "contact": "Let's talk",
+      "follow": "Follow us"
+    },
+    "privacyPolicy": "Privacy Policy",
+    "legalNotice": "Legal Notice"
+  },
+  "home": {
+    "title": "Explore our <br> data valley!",
+    "aboutUs": "about us",
+    "ourServices": "our services",
+    "ourProducts": "our products",
+    "experiences": "industry experience",
+    "smartContract": "Smart contract",
+    "contact": {
+      "text": "We will make you an offer you can't refuse.",
+      "cta": "Let's talk",
+      "left": "click it!",
+      "right": "yeah, <br> good idea"
+    }
+  },
+  "experience": {
+    "title": "Not to brag. but we know <br> a lot about this stuff",
+    "ourProduct": "Our product",
+    "seo": {
+      "title": "Blockchain uses and applications | DATA VALLIS",
+      "description": "See what industries blockchain is used in, what are blockchain uses, applications and success stories."
+    }
+  },
+  "team": {
+    "title": "DATA VALLIS - it can also <br> mean the best team ever",
+    "meaning": {
+      "slovenia": {
+        "title": "Slovenia",
+        "text": "The icon’s shape resembles our country, Slovenia, where the headquarters of the company is located."
+      },
+      "colors": {
+        "title": "Colors",
+        "text": "Slovenia – the green country. Yellow and gold colors illustrate the importance of data."
+      },
+      "data": {
+        "title": "Data",
+        "text": "Because we are an IT company, we work with data. DA (vid) and TA (cer) are also the initials of the founder of the company"
+      },
+      "valley": {
+        "title": "Valley",
+        "text": "The valley is an allusion of the hilly country of Slovenia."
+      }
+    },
+    "management": "Management",
+    "values": {
+      "vision": {
+        "title": "Vizija",
+        "text": "Postati želimo prva izbira podjetij pri zagotavljanju digitalne transformacije. Z razvojem lastnih naprednih in prilagodljivih sistemov za upravljanje z viri ter najnovejšimi tehnologijami, kot je blockchain, smo zanesljiv partner v digitalni transformaciji vsem sektorjem gospodarstva in javnim institucijam."
+      }
+    },
+    "seo": {
+      "title": "Experts in blockchain technology | DATA VALLIS",
+      "description": "Team of experts in blockchain based solutions development, equipped with highly developed skills in software development and business processes."
+    }
+  },
+  "news": {
+    "title": "It's always merry on the </br> data side of the valley ...",
+    "filter": {
+      "all": "all news",
+      "blockchain": "blockchain",
+      "tech": "tech",
+      "events": "events",
+      "other": "other"
+    },
+    "more": "Find me one more article",
+    "placeholder": "Check again tomorrow, you might get lucky ..."
+  },
+  "careers": {
+    "title": "Wanna stroll with us <br> down the valley of data?",
+    "text": "Then take one of the following paths...",
+    "placeholder": "Oh no, right now we think our team is perfect, but you never know ...",
+    "seo": {
+      "title": "IT Jobs – Join the team I DATA VALLIS",
+      "description": "Always searching for new IT professionals to join our team of experts and work on exciting blockchain and other software development projects."
+    }
+  },
+  "contact": {
+    "title": "Get in touch & </br> let's talk",
+    "text": "Take a peek at our work, or just grab a (virtual) coffee with us - you're always welcome to say hi.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "company": "Company",
+      "privacyPolicy": "I agree with",
+      "gdpr": "GDPR",
+      "submit": "That's it",
+      "error": {
+        "emailInvalid": "Invalid email",
+        "emailRequired": "Email is required",
+        "messageRequired": "Message is required"
+      }
+    },
+    "privacyAgreementError": "You must agree to our privacy policy …",
+    "seo": {
+      "title": "Get in touch | DATA VALLIS",
+      "description": "If you have an idea, a project or a solution, simply get in touch, and we will work with you to create an outstanding blockchain solution."
+    }
+  },
+  "pageNotFound": {
+    "title": "Got lost exploring and can’t find your way back?",
+    "text": "No worries, we’ll help you back to the Data Valley because we like having you around :) ",
+    "cta": "Send me home"
+  },
+  "cookiesMsg": "This website uses cookies to ensure you get the best experience on our website.",
+  "seo": {
+    "title": "DATA VALLIS | Blockchain Software Solutions | dApps | Smart Contracts",
+    "description": "Experts in blockchain development services and digital transformation of businesses with more than a decade of experience in providing high-quality solutions."
+  }
+}

@@ -1,0 +1,128 @@
+@use '../helpers' as *;
+
+
+@font-face {
+  font-family: 'matchboook';
+  src: url('/assets/fonts/matchbook-webfont.woff2') format('woff2'),
+    url('/assets/fonts/matchbook-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'proximanova';
+  src: url('/assets/fonts/proxima_nova_font-webfont.woff2') format('woff2'),
+    url('/assets/fonts/proxima_nova_font-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $title;
+  font-weight: 300;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-size: $font-h1;
+  line-height: 424px;
+
+  @include mobile() {
+    font-size: $font-m-h1;
+    line-height: 212px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: $font-h2;
+  line-height: 243px;
+
+  @include mobile() {
+    font-size: $font-m-h2;
+    line-height: 137px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: $font-h3;
+  line-height: 159px;
+
+  @include mobile() {
+    font-size: $font-m-h3;
+    line-height: 80px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: $font-h4;
+  line-height: 92px;
+
+  @include mobile() {
+    font-size: $font-m-h4;
+    line-height: 64px;
+  }
+}
+
+h5,
+.h5 {
+  font-size: $font-h5;
+  line-height: 53px;
+
+  @include mobile() {
+    font-size: $font-m-h5;
+    line-height: 31px;
+  }
+}
+
+h6,
+.h6 {
+  font-size: $font-h6;
+  line-height: 40px;
+  font-family: $body;
+
+  @include mobile() {
+    font-size: $font-m-h6;
+    line-height: 30px;
+  }
+}
+
+.large {
+  font-size: $font-large;
+  line-height: 21px;
+
+  @include mobile() {
+    font-size: $font-m-large;
+    line-height: 18px;
+  }
+}
+
+.small {
+  font-size: $font-small;
+  line-height: 18px;
+
+  @include mobile() {
+    font-size: $font-m-small;
+    line-height: 16px;
+  }
+}
+
+.mono {
+  font-family: 'Space Mono', monospace;
+}

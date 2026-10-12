@@ -1,0 +1,302 @@
+@use '../helpers' as *;
+
+/* ---------- dv-accordion ---------- */
+.dv-accordion {
+  display: block;
+
+  > .acc-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s cubic-bezier(0.4, 0, 0, 1) max-height;
+
+    &.open {
+      @include desktop() {
+        max-height: 2000px;
+      }
+
+      @include mobile() {
+        max-height: 10000px;
+      }
+    }
+  }
+
+  > .acc-header.highlight {
+    .highlight-green {
+      color: $primary;
+    }
+  }
+}
+
+/* ---------- dv-link ---------- */
+$link-transition: 0.3s ease-in-out all;
+
+.dv-link {
+  display: inline;
+
+  .link-wrapper {
+    position: relative;
+    transition: $link-transition;
+    padding-left: 0;
+    cursor: pointer;
+    display: flex;
+
+    > a {
+      position: relative;
+      left: 0;
+      top: -10px;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 3.5px;
+      font-size: 14px;
+      line-height: 17px;
+      transition: 0.5s ease-in-out all;
+      max-width: 0;
+      overflow: hidden;
+      display: block;
+      white-space: nowrap;
+      margin-right: 0;
+
+      @include mobile() {
+        top: 0;
+      }
+    }
+  }
+
+  .arrow {
+    position: relative;
+    height: 17px;
+    width: 105px;
+    transition: $link-transition;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &:hover {
+    .link-wrapper > a {
+      max-width: 100%;
+      margin-right: 15px;
+    }
+
+    .arrow {
+      width: 56px;
+    }
+  }
+
+  @include mobile() {
+    .link-wrapper > a {
+      max-width: 100%;
+      margin-right: 15px;
+    }
+
+    .arrow {
+      width: 56px;
+    }
+  }
+}
+
+/* ---------- dv-page ---------- */
+.dv-page {
+  padding-top: 140px;
+  padding-bottom: 250px;
+  display: block;
+  min-height: 100vh;
+
+  line-height: 40px;
+  letter-spacing: 0.9px;
+  margin: 0;
+  font-size: $font-large;
+
+  @include mobile() {
+    font-size: $font-m-large;
+    line-height: 30px;
+    letter-spacing: 0.8px;
+  }
+
+  h3 {
+    margin-bottom: 80px;
+  }
+
+  h5 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  a {
+    display: contents;
+    color: $primary;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
+
+  table {
+    width: 100%;
+
+    th {
+      opacity: 0.5;
+      text-align: left;
+      border-bottom: solid 1px rgb(138 138 138);
+    }
+
+    @include mobile() {
+      tr {
+        display: flex;
+        flex-direction: column;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        &:first-child {
+          font-family: $title;
+          opacity: 0.5;
+          font-size: 45px;
+          padding-top: 40px;
+          border-bottom: solid 1px white;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+/* ---------- dv-title ---------- */
+.dv-title {
+  display: flex;
+  height: 100vh;
+  position: relative;
+
+  @include desktop() {
+    width: 100vw;
+    align-items: center;
+  }
+
+  @include mobile() {
+    align-items: baseline;
+    padding-top: 136px;
+    width: 100%;
+  }
+
+  > .title-content {
+    overflow: hidden;
+
+    > h3,
+    > h2 {
+      transition: 0.5s ease-in-out all;
+      transform: translateY(100%);
+      opacity: 0;
+
+      @include mobile() {
+        position: relative;
+        z-index: 1;
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    > .custom-content {
+      opacity: 0;
+      transition: 1s ease-in-out opacity 1s;
+    }
+
+    &.slide-in {
+      > h2,
+      > h3 {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      > .custom-content {
+        opacity: 1;
+      }
+    }
+  }
+
+  .image-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+
+    @include mobile() {
+      width: 400vw;
+      left: -150vw;
+      opacity: 1;
+      display: none;
+    }
+
+    > img {
+      width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 0;
+    }
+  }
+
+  .cursor-block {
+    left: calc(50% - 850px);
+    bottom: calc(50vh - 100px);
+    height: 300px;
+    width: 100px;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+/* ---------- dv-vertical-title ---------- */
+.dv-vertical-title {
+  overflow: hidden;
+  display: inline-block;
+
+  > .vt-wrapper {
+    display: flex;
+    width: 430px;
+    height: 100%;
+    position: relative;
+    top: 0;
+
+    @include mobile() {
+      width: auto !important;
+      height: auto !important;
+      overflow: visible;
+    }
+
+    > h1 {
+      -webkit-text-stroke: 1px white;
+      color: transparent;
+      opacity: 0.8;
+      white-space: nowrap;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+
+      @include mobile() {
+        font-size: $font-m-h2;
+        line-height: 110px;
+        padding-bottom: 40px;
+        position: relative;
+      }
+    }
+  }
+
+  @include mobile() {
+    display: block;
+
+    > .vt-wrapper > h1 {
+      transform: translateX(-100%);
+    }
+  }
+}
