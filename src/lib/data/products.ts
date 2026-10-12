@@ -19,6 +19,7 @@ export const PRODUCTS: Product[] = [
     excerpt:
       'An infrastructure layer that gives developers access to custom decentralized storage nodes through dedicated service APIs and an SDK, with read and write methods for supported decentralized storage out of the box. End users get dynamic NFTs with preset storage and bandwidth capacity.',
     tags: ['Storage nodes', 'APIs & SDK', 'Dynamic NFTs'],
+    docsUrl: 'https://wiki.pollinationx.io/',
   },
   {
     id: 4,
