@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { cache } from 'react';
 import NewsDetailsPage from '@/components/pages/NewsDetailsPage';
 import { getArticle } from '@/lib/api';
-import { seo } from '@/lib/seo';
+import { pageMetadata, seo, truncate } from '@/lib/seo';
 import { stripHTML } from '@/lib/utils';
 
 type Params = { params: Promise<{ category: string; slug: string }> };
@@ -21,13 +21,17 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const article = await loadArticle(slug);
 
   if (!article) {
-    return seo();
+    return { ...seo(), robots: { index: false, follow: true } };
   }
 
-  return {
+  return pageMetadata({
     title: `${article.title} | DATA VALLIS`,
-    description: stripHTML(article.excerpt || ''),
-  };
+    description: truncate(stripHTML(article.excerpt || '')),
+    path: `/news/all/${slug}`,
+    image: article.image || 'default',
+    type: 'article',
+    noindex: true, // news section is hidden for now
+  });
 }
 
 export default async function Page({ params }: Params) {

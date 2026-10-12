@@ -6,30 +6,28 @@ import '@/styles/globals.scss';
 import Layout from '@/components/layout/Layout';
 import { GA_ID, SITE_URL } from '@/lib/constants';
 import { seo } from '@/lib/seo';
-
-const SHARE_TITLE = 'Data Vallis: Web3 development company';
-const SHARE_DESCRIPTION =
-  'We design and build smart contracts, dApps and decentralized infrastructure for clients, and run Web3 products of our own, like CHERR.IO and PollinationX.';
+import { JsonLd, organizationJsonLd, websiteJsonLd } from '@/lib/jsonld';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   ...seo(),
-  robots: { index: true, follow: true },
-  icons: { icon: '/assets/images/colors.svg' },
-  twitter: {
-    card: 'summary',
-    site: '@DataVallis',
-    title: SHARE_TITLE,
-    description: SHARE_DESCRIPTION,
-    images: [`${SITE_URL}/assets/images/logo.svg`],
+  applicationName: 'Data Vallis',
+  authors: [{ name: 'DATA VALLIS d.o.o.', url: SITE_URL }],
+  publisher: 'DATA VALLIS d.o.o.',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },
   },
-  openGraph: {
-    url: SITE_URL,
-    type: 'website',
-    title: SHARE_TITLE,
-    description: SHARE_DESCRIPTION,
-    images: [`${SITE_URL}/assets/images/logo.svg`],
+  icons: {
+    icon: [
+      { url: '/icons/icon.svg', type: 'image/svg+xml' },
+      { url: '/icons/favicon-32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/icons/apple-touch-icon.png', sizes: '180x180' }],
   },
+  manifest: '/manifest.webmanifest',
+  formatDetection: { telephone: false },
 };
 
 export const viewport: Viewport = {
@@ -47,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet" />
       </head>
       <body>
+        <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
         <Layout>{children}</Layout>
 
         {/* Google Analytics 4 (the old Universal Analytics tag UA-72564220-1 stopped collecting data in 2023) */}

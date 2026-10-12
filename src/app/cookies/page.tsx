@@ -1,7 +1,11 @@
 import Page from '@/components/shared/Page';
-import { seo } from '@/lib/seo';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata = seo();
+export const metadata = pageMetadata({
+  title: 'Cookies | DATA VALLIS',
+  description: 'Which cookies datavallis.com uses, what they are for and how long they are stored.',
+  path: '/cookies',
+});
 
 export default function CookiesPage() {
   return (
