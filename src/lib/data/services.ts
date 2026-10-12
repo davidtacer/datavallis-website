@@ -1,25 +1,32 @@
 import type { Service } from '../models';
 
 export const SERVICES: Service[] = [
-    {
-      id: 12,
-      title: 'Digital transformation',
-      subtitle: 'of business process',
-      description:
-        'We empower businesses to embrace the digital age fully, transforming core processes and customer interactions through innovative technology. From streamlining workflows to enhancing customer touchpoints, we guide companies through each step of digital transition, building customized solutions that unlock new value and elevate their competitive edge.',
-    },
-    {
-      id: 18,
-      title: 'Smart contract',
-      subtitle: 'development',
-      description:
-        'We develop robust, self-executing smart contracts that automate agreements on blockchain networks, ensuring that terms are met with precision and transparency. These contracts run independently once triggered, removing intermediaries and reducing risks. With our expertise, your business can securely manage transactions and enforce agreements in real-time, achieving greater efficiency and trust. Each contract is tailored to your specific requirements, enhancing the security, reliability, and accountability of your digital processes.',
-    },
-    {
-      id: 23,
-      title: 'Interoperability',
-      subtitle: 'of data and services',
-      description:
-        'We enable seamless integration across diverse systems, facilitating effortless data sharing and collaboration. Our interoperability solutions allow businesses to access and exchange data securely, enhancing productivity and offering a unified view of critical information across platforms and departments.',
-    },
-  ];
+  {
+    id: 1,
+    title: 'Smart contracts',
+    subtitle: 'design & testing',
+    description:
+      'Solidity smart contracts for tokens, NFTs, escrow, payments and on-chain governance. Designed for security from the first line, fully tested and documented, so your logic runs exactly as agreed, without intermediaries.',
+  },
+  {
+    id: 2,
+    title: 'dApp development',
+    subtitle: 'idea to mainnet',
+    description:
+      'End-to-end decentralized applications: product design, wallet onboarding that works for non-crypto users, front-end, back-end and smart contracts. We take your product from prototype to launch and keep it running.',
+  },
+  {
+    id: 3,
+    title: 'Web3 infrastructure',
+    subtitle: 'storage & data',
+    description:
+      'Decentralized storage, IPFS, APIs and SDKs, built on the experience of running our own infrastructure layer, PollinationX. We connect blockchain with your existing systems so data and services work together.',
+  },
+  {
+    id: 4,
+    title: 'Digital transformation',
+    subtitle: 'beyond blockchain',
+    description:
+      'Not everything needs a blockchain. We map your processes and build the right software for them, from custom web platforms to automation, adding Web3 only where it brings real transparency, trust or savings.',
+  },
+];

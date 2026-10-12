@@ -6,7 +6,7 @@ export const EXPERIENCES: Experience[] = [
       id: 1,
       productName: 'CHERR.IO',
       linkDescription: 'Charity & blockchain',
-      productUrl: 'https://bit.ly/cherrio-platform ',
+      productUrl: 'https://cherr.io',
       slug: 'charity',
       description: `
         <p>The charity sector is dealing with a serious trust issue, namely funds which are sent to impoverished countries don’t always reach the intended recipients  — but blockchain technology can provide a solution. The decentralized nature of blockchain technology can help narrow the trust deficit between givers and organizations. What is more, the fact that donations can be tied to smart contracts (which are one of the safest and most powerful tools for creating agreements between parties) is enabling donors to donate directly to those best in a position to help or in need. Givers, particularly younger ones, are now more likely than ever to demand more modern and easy ways to donate, as well as clearer indicators that their donation will surely make an impact.</p>
@@ -19,7 +19,7 @@ export const EXPERIENCES: Experience[] = [
             guaranteed result and accuracy: smart contracts are self-executable and defined with great precision. Once the conditions that have been agreed upon are met, the contract is executed automatically;
           </li>
           <li>
-            global and decentralized: most blockchain networks present high levels of decentralization, meaning that they do not need to rely on any institution. Thus, funds can move directly from donors to charities or directly to those in a position in need, and the decentralized nature of blockchain makes it uniquely suitable for international transactions. This was proven as essential, as the Covid-19 crisis has made helping those in need very difficult;
+            global and decentralized: most blockchain networks present high levels of decentralization, meaning that they do not need to rely on any institution. Thus, funds can move directly from donors to charities or directly to those in a position in need, and the decentralized nature of blockchain makes it uniquely suitable for international transactions.;
           </li>
           <li>
             speed: unlike standard procedures, smart contracts are executed immediately, making them highly efficient, which speed up the donation process;
@@ -33,7 +33,7 @@ export const EXPERIENCES: Experience[] = [
         </ul>
         
         <p>
-          All of those positive characteristics of blockchain have been taken into consideration when developing our in-house project – CHERR.IO. It's a fundraising platform that streamlines the process of identifying people in need and raises funds to bring them the help they require. We tend to create an ecosystem with different modules intended for different sectors, e.g. FinTech, payment systems, e-commerce, tourism, hospitality, food-waste and others. Regardless of the sector, the project will ensure privacy, security, interoperability, transparency, portability of data and services, as well as compliance with legislation in this process. By utilizing blockchain technology we strive to provide a secure and transparent process of raising and delivering funds, accompanied by a program of incentives for active participation from the community and an ecosystem that will facilitate organic growth of the platform. 
+          All of those advantages are built into our own product, CHERR.IO, a donation platform where every cent is on the record. Donations are held in a smart-contract escrow for each campaign and released to verified charities and fundraisers in steps, only after donors review the receipts and vote. If a campaign falls short or donors reject the evidence, they get their money back or pass it to the Emergency Pool. Donors can give by card or crypto wallet, with no crypto knowledge needed, and charities are ranked publicly by a published Trust Score on the Charity Market Cap. CHERR.IO is built on Polygon and is now open as a public testnet beta.
         </p>
         
         <p>Our goal is to make this technology available to all parties involved by creating an universal platform that will improve and expand the existing fundraising processes, increase efficiency and real-time transparency and reinforce the donors' trust.</p>

@@ -4,12 +4,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '@/styles/globals.scss';
 import Layout from '@/components/layout/Layout';
-import { SITE_URL } from '@/lib/constants';
+import { GA_ID, SITE_URL } from '@/lib/constants';
 import { seo } from '@/lib/seo';
 
-const SHARE_TITLE = 'DataVallis: Leaders in Blockchain Development and Digital Transformation';
+const SHARE_TITLE = 'Data Vallis: Web3 development company';
 const SHARE_DESCRIPTION =
-  'As experts in blockchain development and digital transformation, our team has over a decade of experience in delivering top-notch solutions that help businesses thrive in the modern world. From custom blockchain development to digital transformation strategies, we have the skills and expertise to help your business succeed.';
+  'We design and build smart contracts, dApps and decentralized infrastructure for clients, and run Web3 products of our own, like CHERR.IO and PollinationX.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -49,14 +49,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Layout>{children}</Layout>
 
-        {/* Global site tag (gtag.js) - Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=UA-72564220-1" strategy="afterInteractive" />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
+        {/* Google Analytics 4 (the old Universal Analytics tag UA-72564220-1 stopped collecting data in 2023) */}
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'UA-72564220-1');`}
-        </Script>
+gtag('config', '${GA_ID}');`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

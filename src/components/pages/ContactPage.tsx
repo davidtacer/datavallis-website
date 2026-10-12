@@ -6,6 +6,7 @@ import { submitContactForm } from '@/lib/api';
 import Title, { TitleSize } from '@/components/shared/Title';
 import DvLink from '@/components/shared/DvLink';
 import TLink from '@/components/shared/TLink';
+import { BOOKING_URL } from '@/lib/constants';
 
 enum FormStatus {
   Default = 0,
@@ -108,6 +109,19 @@ export default function ContactPage() {
       <div className="content flex flex-m">
         <div className="left-side">
           <div className="desktop h6">{t('contact.text')}</div>
+
+          <div className="direct-contact">
+            <span>{t('contact.emailLabel')}</span>{' '}
+            <a href="mailto:info@datavallis.com">info@datavallis.com</a>
+            {BOOKING_URL && (
+              <>
+                <br />
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                  {t('contact.bookLabel')}
+                </a>
+              </>
+            )}
+          </div>
 
           <div className="mock-code mono">
             {' { '}

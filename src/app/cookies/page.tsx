@@ -28,36 +28,18 @@ export default function CookiesPage() {
             <th>Cookie time</th>
             <th>Website</th>
           </tr>
-          <tr>
-            <td>NID</td>
-            <td>Google settings ID</td>
-            <td>Until the end of the session</td>
-            <td>.google.com</td>
-          </tr>
-          <tr>
-            <td>_ga</td>
-            <td>Website viewing statistics</td>
-            <td>2 years</td>
-            <td>.datavallis.com</td>
-          </tr>
-          <tr>
-            <td>_gid</td>
-            <td>Website viewing statistics</td>
-            <td>1 day</td>
-            <td>.datavallis.com</td>
-          </tr>
-          <tr>
-            <td>_gat</td>
-            <td>Website viewing statistics</td>
-            <td>10 minutes</td>
-            <td>.datavallis.com</td>
-          </tr>
-          <tr>
-            <td>_gat_gtag_UA_128373629_1</td>
-            <td>Website viewing statistics</td>
-            <td>1 day</td>
-            <td>.datavallis.com</td>
-          </tr>
+            <tr>
+              <td>_ga</td>
+              <td>Google Analytics 4 - distinguishes unique visitors</td>
+              <td>2 years</td>
+              <td>.datavallis.com</td>
+            </tr>
+            <tr>
+              <td>_ga_&lt;ID&gt;</td>
+              <td>Google Analytics 4 - keeps the session state</td>
+              <td>2 years</td>
+              <td>.datavallis.com</td>
+            </tr>
             </tbody>
         </table>
     </Page>

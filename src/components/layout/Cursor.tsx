@@ -25,6 +25,7 @@ export default function Cursor() {
   const [left, setLeft] = useState<number | undefined>(undefined);
   const [top, setTop] = useState<number | undefined>(undefined);
   const [background, setBackground] = useState<CSSProperties>({});
+  const [overField, setOverField] = useState(false);
   const stateRef = useRef(state);
 
   stateRef.current = state;
@@ -40,6 +41,10 @@ export default function Cursor() {
       const $img = $tree?.find((el) => el.classList?.contains(REVEAL_CLASS));
 
       let src = '';
+
+      // native text cursor over form fields
+      const tag = $target.tagName?.toLowerCase();
+      setOverField(tag === 'input' || tag === 'textarea' || tag === 'select');
 
       if (
         POINTER_EL.includes($target.tagName?.toLowerCase()) ||
@@ -92,7 +97,7 @@ export default function Cursor() {
 
   const classes = [
     'dv-cursor',
-    left === undefined ? 'hide' : '',
+    left === undefined || overField ? 'hide' : '',
     state === CursorState.Pointer ? 'state2' : '',
     state === CursorState.BackgroundReveal ? 'state3' : '',
   ]

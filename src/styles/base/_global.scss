@@ -26,6 +26,13 @@ body {
   cursor: none !important;
 }
 
+// keep the native cursor where people type
+input,
+textarea,
+select {
+  cursor: text !important;
+}
+
 a {
   text-decoration: none;
   color: white;

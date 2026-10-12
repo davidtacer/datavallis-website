@@ -85,9 +85,9 @@ export default function VerticalTitle({ title, content, className, style }: Prop
   return (
     <div className={`dv-vertical-title${className ? ' ' + className : ''}`} style={style}>
       <div className="vt-wrapper" style={height ? { height } : undefined}>
-        <h1 ref={titleRef} style={transform ? { transform } : undefined}>
+        <h2 ref={titleRef} className="vt-heading h1" style={transform ? { transform } : undefined}>
           {title}
-        </h1>
+        </h2>
       </div>
     </div>
   );

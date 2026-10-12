@@ -27,6 +27,8 @@ export interface AppState {
 
   // BackgroundService
   isFirefox: boolean;
+  /** the intro animation was already shown in this browser session */
+  skipIntro: boolean;
   animationCompleted: boolean;
   showView: boolean;
   changingBackground: boolean;
@@ -50,6 +52,7 @@ export const useAppStore = create<AppState>(() => ({
   activeRoute: undefined,
 
   isFirefox: false,
+  skipIntro: false,
   animationCompleted: false,
   showView: false,
   changingBackground: false,
@@ -67,7 +70,8 @@ const set = useAppStore.setState;
 const get = useAppStore.getState;
 
 /** BackgroundService._DELAY */
-export const getDelay = (): number => (get().isFirefox ? 1000 : BACKGROUND_ANIMATION_DURATION);
+export const getDelay = (): number =>
+  get().isFirefox || get().skipIntro ? 1000 : BACKGROUND_ANIMATION_DURATION;
 
 /**
  * PageLoaderService.animateLayout
