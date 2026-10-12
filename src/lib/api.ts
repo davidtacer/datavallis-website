@@ -56,6 +56,17 @@ export async function getArticle(category: string, slug: string, init?: RequestI
   return addCdn(response.data)[0] || null;
 }
 
-export function submitContactForm(data: Record<string, unknown>): Promise<unknown> {
-  return post('/contact-form', data);
+/** Contact form -> Next.js route handler (src/app/api/contact/route.ts) which stores it in Klaviyo */
+export async function submitContactForm(data: Record<string, unknown>): Promise<unknown> {
+  const response = await fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Contact form failed with ${response.status}`);
+  }
+
+  return response.json();
 }

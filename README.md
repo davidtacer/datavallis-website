@@ -5,7 +5,7 @@
 ## Getting started
 
 ```bash
-cp .env.example .env.local   # fill in NEXT_PUBLIC_API_KEY (same value as in the Angular environment.prod.ts)
+cp .env.example .env.local   # fill in the API key (news) and the Klaviyo key + list ID (contact form)
 npm install
 npm run dev                  # http://localhost:3000
 npm run build && npm start   # production
@@ -25,7 +25,8 @@ src/components/home/      home page sections
 src/components/pages/     other pages
 src/lib/store.ts          PageLoaderService + BackgroundService + MenuService (zustand)
 src/lib/navigation.ts     CanDeactivateGuard2 – page overlay + 700 ms delay between pages
-src/lib/api.ts            ApiService + interceptor + NewsService + ContactService
+src/lib/api.ts            ApiService + interceptor + NewsService
+src/app/api/contact/      contact form endpoint -> Klaviyo (src/lib/klaviyo.ts)
 src/lib/data/             experiences, services, products, technologies, fragments
 src/i18n/                 en.json / sl.json (ngx-translate files)
 src/styles/               original global SCSS + component styles
@@ -44,4 +45,7 @@ src/styles/               original global SCSS + component styles
   News articles are fetched on the server (with a client-side fallback); unknown URLs return a real 404.
 - The article request keeps the original URL format `/news/undefined/:slug` (typo `params.caregory` in Angular),
   so the API behaves exactly as before.
+- **Contact form** posts to `/api/contact` (server). It upserts the Klaviyo profile (name, company, message),
+  adds it to `KLAVIYO_LIST_ID` (without marketing consent) and tracks a `Contact Form Submitted` event,
+  which can trigger a Klaviyo flow (e.g. notify info@datavallis.com).
 - `/sitemap.xml`, `/robots.txt` and the Google Analytics tag are unchanged.
