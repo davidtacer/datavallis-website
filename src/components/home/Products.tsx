@@ -37,7 +37,12 @@ export default function Products({ onEnter }: { onEnter?: () => void }) {
                 ))}
               </ul>
 
-              <DvLink external={product.url} newTab={true} textKey={product.name + ' website'} />
+              <DvLink external={product.url} newTab={true} textKey={product.name + ' website'} open />
+              {product.docsUrl && (
+                <div className="product-docs">
+                  <DvLink external={product.docsUrl} newTab={true} textKey="Documentation" open />
+                </div>
+              )}
             </div>
           ))}
         </div>

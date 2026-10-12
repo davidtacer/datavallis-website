@@ -57,6 +57,8 @@ export interface Product {
   status?: string;
   /** short facts shown as chips */
   tags: string[];
+  /** optional documentation / wiki link */
+  docsUrl?: string;
 }
 
 export interface Technology {

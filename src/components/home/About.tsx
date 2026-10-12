@@ -22,7 +22,7 @@ export default function About({ onEnter }: { onEnter?: () => void }) {
           </p>
           <p>
             We don&apos;t just build for clients. We design, launch and run Web3 products of our own, like CHERR.IO,
-            PollinationX and the PX dApp, so we know what it takes to get a decentralized product from whiteboard to
+            PollinationX, W3XShare and the PX dApp, so we know what it takes to get a decentralized product from whiteboard to
             mainnet, and to keep it running once real users arrive.
           </p>
         </div>

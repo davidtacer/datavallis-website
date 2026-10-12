@@ -37,7 +37,7 @@
       "right": "yeah, <br> good idea"
     },
     "subtitle": "Smart contracts, dApps and decentralized infrastructure, for our clients and for products of our own.",
-    "ctaPrimary": "Book a call",
+    "ctaPrimary": "Start a project",
     "ctaSecondary": "See our products"
   },
   "experience": {
@@ -124,8 +124,7 @@
       "title": "Get in touch | DATA VALLIS",
       "description": "Have a Web3 project, a dApp or a smart contract in mind? Get in touch and let's build it together."
     },
-    "emailLabel": "Prefer email?",
-    "bookLabel": "Or book a 20-minute call"
+    "emailLabel": "Prefer email?"
   },
   "pageNotFound": {
     "title": "Got lost exploring and can’t find your way back?",

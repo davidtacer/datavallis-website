@@ -21,6 +21,16 @@ export const PRODUCTS: Product[] = [
     tags: ['Storage nodes', 'APIs & SDK', 'Dynamic NFTs'],
   },
   {
+    id: 4,
+    name: 'W3XShare',
+    url: 'https://w3xshare.com/',
+    title: 'Encrypted file sharing between wallets',
+    excerpt:
+      'A secure, self-custodial way to send encrypted data files from wallet to wallet. W3XShare combines blockchain networks, decentralized storage and communication protocols, and its modular architecture is also available as a white-label solution for launching your own data-sharing app.',
+    tags: ['Wallet-to-wallet', 'Encrypted transfers', 'Self-custodial', 'White-label'],
+    docsUrl: 'https://wiki.w3xshare.com/',
+  },
+  {
     id: 3,
     name: 'PX dApp',
     url: 'https://app.pollinationx.io/',

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useAppStore, getDelay, setFragment } from '@/lib/store';
 import { useActivated, useViewportNotifier } from '@/lib/hooks';
 import { FRAGMENT_EVENT, activationDelay } from '@/lib/navigation';
-import { BOOKING_URL, OVERLAY_ANIMATION_DURATION } from '@/lib/constants';
+import { OVERLAY_ANIMATION_DURATION } from '@/lib/constants';
 import { scrollToAnchor, scrollToPosition } from '@/lib/utils';
 import { useT } from '@/lib/i18n-client';
 import Title from '@/components/shared/Title';
@@ -95,15 +95,9 @@ export default function HomePage() {
         <div className="dv-home-hero">
           <p className="h6">{t('home.subtitle')}</p>
           <div className="ctas">
-            {BOOKING_URL ? (
-              <a className="cta-primary" href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                {t('home.ctaPrimary')}
-              </a>
-            ) : (
-              <TLink className="cta-primary" href="/contact">
-                {t('home.ctaPrimary')}
-              </TLink>
-            )}
+            <TLink className="cta-primary" href="/contact">
+              {t('home.ctaPrimary')}
+            </TLink>
             <DvLink route="/#products" textKey="home.ctaSecondary" open />
           </div>
         </div>
