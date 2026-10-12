@@ -57,11 +57,8 @@ export default function Footer() {
             <a href="https://www.linkedin.com/company/data-vallis/mycompany/" target="_blank">
               <img className="pointer icon" src="/assets/icons/linkedin.svg" alt="linkeid icon" />
             </a>
-            <a href="https://www.facebook.com/data.vallis" target="_blank">
-              <img className="pointer icon" src="/assets/icons/facebook.svg" alt="facebook icon" />
-            </a>
-            <a href="https://twitter.com/DataVallis" target="_blank">
-              <img className="pointer icon" src="/assets/icons/twitter.png" alt="linkedin icon" />
+            <a href="https://x.com/DataVallis" target="_blank">
+              <img className="pointer icon" src="/assets/icons/x.svg" alt="X icon" />
             </a>
           </li>
         </ul>
