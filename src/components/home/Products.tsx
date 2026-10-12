@@ -38,11 +38,11 @@ export default function Products({ onEnter }: { onEnter?: () => void }) {
               </ul>
 
               <DvLink external={product.url} newTab={true} textKey={product.name + ' website'} open />
-              {product.docsUrl && (
-                <div className="product-docs">
-                  <DvLink external={product.docsUrl} newTab={true} textKey="Documentation" open />
+              {product.links?.map((link) => (
+                <div className="product-docs" key={link.url}>
+                  <DvLink external={link.url} newTab={true} textKey={link.label} open />
                 </div>
-              )}
+              ))}
             </div>
           ))}
         </div>

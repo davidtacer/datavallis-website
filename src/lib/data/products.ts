@@ -10,6 +10,7 @@ export const PRODUCTS: Product[] = [
     excerpt:
       'A donation platform where every cent is on the record. Donations are held in a smart-contract escrow for each campaign and released to verified charities in steps, only after donors review the receipts and vote. If a campaign falls short or donors reject the evidence, they get their money back or pass it to the Emergency Pool. Donors can give by card or crypto wallet, no crypto knowledge needed, and charities are ranked publicly by a Trust Score on the Charity Market Cap.',
     tags: ['Smart-contract escrow', 'Card & crypto donations', 'On-chain voting', 'Trust Score'],
+    links: [{ label: 'Try the testnet', url: 'https://testnet.cherr.io/en' }],
   },
   {
     id: 2,
@@ -19,7 +20,7 @@ export const PRODUCTS: Product[] = [
     excerpt:
       'An infrastructure layer that gives developers access to custom decentralized storage nodes through dedicated service APIs and an SDK, with read and write methods for supported decentralized storage out of the box. End users get dynamic NFTs with preset storage and bandwidth capacity.',
     tags: ['Storage nodes', 'APIs & SDK', 'Dynamic NFTs'],
-    docsUrl: 'https://wiki.pollinationx.io/',
+    links: [{ label: 'Documentation', url: 'https://wiki.pollinationx.io/' }],
   },
   {
     id: 4,
@@ -29,7 +30,7 @@ export const PRODUCTS: Product[] = [
     excerpt:
       'A secure, self-custodial way to send encrypted data files from wallet to wallet. W3XShare combines blockchain networks, decentralized storage and communication protocols, and its modular architecture is also available as a white-label solution for launching your own data-sharing app.',
     tags: ['Wallet-to-wallet', 'Encrypted transfers', 'Self-custodial', 'White-label'],
-    docsUrl: 'https://wiki.w3xshare.com/',
+    links: [{ label: 'Documentation', url: 'https://wiki.w3xshare.com/' }],
   },
   {
     id: 3,
