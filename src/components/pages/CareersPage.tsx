@@ -15,7 +15,13 @@ export default function CareersPage() {
       <div className="content flex">
         <div className="h6 desktop">{t('careers.text')}</div>
         <div className="list">
-          <div className="h4 green-f">{t('careers.placeholder')}</div>
+          <a className="h4 green-f open-application" href={`mailto:${t('careers.email')}?subject=Open%20application`}>
+            {t('careers.placeholder')}
+          </a>
+          <p className="open-application-hint">
+            Tell us what you build and send a link to your GitHub or portfolio:{' '}
+            <a href={`mailto:${t('careers.email')}`}>{t('careers.email')}</a>
+          </p>
         </div>
       </div>
     </div>

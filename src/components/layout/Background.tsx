@@ -16,9 +16,16 @@ export default function Background() {
   const backgroundSrc = useAppStore((s) => s.backgroundSrc);
   const isFirefox = useAppStore((s) => s.isFirefox);
   const booted = useAppStore((s) => s.booted);
+  const skipIntro = useAppStore((s) => s.skipIntro);
 
   useEffect(() => {
     if (!booted || !containerRef.current) {
+      return;
+    }
+
+    if (useAppStore.getState().skipIntro) {
+      // intro already seen in this session - no need to download the animation again
+      initAnimation(null);
       return;
     }
 
@@ -58,7 +65,7 @@ export default function Background() {
     <div className={classes}>
       <div className="overlay"></div>
       <div
-        className={`lottie${isFirefox ? ' firefox' : ''}${animationCompleted ? ' fade-out' : ''}`}
+        className={`lottie${isFirefox || skipIntro ? ' firefox' : ''}${animationCompleted ? ' fade-out' : ''}`}
       >
         <div ref={containerRef} style={{ height: '100%' }}></div>
       </div>
@@ -68,7 +75,7 @@ export default function Background() {
           src={backgroundSrc}
           height={1224}
           width={2186}
-          alt="Valey"
+          alt=""
           className={changingBackground ? 'fade-out' : undefined}
         />
       </div>

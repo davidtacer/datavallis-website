@@ -15,7 +15,7 @@ export default function Services({ onEnter }: { onEnter?: () => void }) {
     <div className="dv-services" id="services" ref={ref}>
       <div className="container">
         <div className="content p-l">
-          <h3>{t('home.ourServices')}</h3>
+          <h2 className="h3 section-title">{t('home.ourServices')}</h2>
 
           <div className="flex">
             {SERVICES.map((service) => (

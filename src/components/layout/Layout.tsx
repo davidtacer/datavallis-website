@@ -36,9 +36,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   // Initial navigation (router initialNavigation: 'enabledBlocking' + guard)
   useEffect(() => {
     const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-    useAppStore.setState({ isFirefox });
 
-    if (isFirefox) {
+    // show the 3s intro only once per browser session; afterwards use the static background (like Firefox)
+    let skipIntro = false;
+    try {
+      skipIntro = sessionStorage.getItem('dv-intro-seen') === '1';
+    } catch {
+      /* storage not available */
+    }
+
+    useAppStore.setState({ isFirefox, skipIntro });
+
+    if (isFirefox || skipIntro) {
       setTimeout(() => useAppStore.setState({ animationCompleted: true }), 1000);
     }
 
@@ -86,6 +95,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     }
   }, [pathname]);
 
+  useEffect(() => {
+    if (animationCompleted) {
+      try {
+        sessionStorage.setItem('dv-intro-seen', '1');
+      } catch {
+        /* storage not available */
+      }
+    }
+  }, [animationCompleted]);
+
   const isDesktop = windowWidth !== undefined && windowWidth > 768;
 
   return (
@@ -107,7 +126,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         <div className={`page-loader${showPageOverlay ? ' show' : ''}`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={backgroundSrc} alt="Valey" height={1224} width={2186} />
+          <img src={backgroundSrc} alt="" height={1224} width={2186} />
         </div>
 
         {booted && isDesktop && animationCompleted && <Cursor />}

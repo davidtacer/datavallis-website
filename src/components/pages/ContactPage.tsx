@@ -109,6 +109,11 @@ export default function ContactPage() {
         <div className="left-side">
           <div className="desktop h6">{t('contact.text')}</div>
 
+          <div className="direct-contact">
+            <span>{t('contact.emailLabel')}</span>{' '}
+            <a href="mailto:info@datavallis.com">info@datavallis.com</a>
+          </div>
+
           <div className="mock-code mono">
             {' { '}
             <div className="property">

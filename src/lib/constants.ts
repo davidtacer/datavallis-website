@@ -9,3 +9,6 @@ export const SITE_URL = 'https://datavallis.com';
 export const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT || 'https://api.datavallis.si/v1';
 export const API_KEY = process.env.NEXT_PUBLIC_API_KEY || '';
 export const CDN = process.env.NEXT_PUBLIC_CDN || 'https://cdn.datavallis.si/';
+
+/** Optional: Google Analytics 4 measurement ID (G-XXXXXXX) */
+export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';

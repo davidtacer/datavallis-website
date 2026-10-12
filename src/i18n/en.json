@@ -24,24 +24,27 @@
     "legalNotice": "Legal Notice"
   },
   "home": {
-    "title": "Explore our <br> data valley!",
+    "title": "We build <br> Web3 products.",
     "aboutUs": "about us",
-    "ourServices": "our services",
+    "ourServices": "what we build",
     "ourProducts": "our products",
     "experiences": "industry experience",
     "smartContract": "Smart contract",
     "contact": {
-      "text": "We will make you an offer you can't refuse.",
+      "text": "Have a Web3 idea? We will make you an offer you can't refuse.",
       "cta": "Let's talk",
       "left": "click it!",
       "right": "yeah, <br> good idea"
-    }
+    },
+    "subtitle": "Smart contracts, dApps and decentralized infrastructure, for our clients and for products of our own.",
+    "ctaPrimary": "Start a project",
+    "ctaSecondary": "See our products"
   },
   "experience": {
     "title": "Not to brag. but we know <br> a lot about this stuff",
     "ourProduct": "Our product",
     "seo": {
-      "title": "Blockchain uses and applications | DATA VALLIS",
+      "title": "Blockchain in practice: industry experience | DATA VALLIS",
       "description": "See what industries blockchain is used in, what are blockchain uses, applications and success stories."
     }
   },
@@ -73,8 +76,8 @@
       }
     },
     "seo": {
-      "title": "Experts in blockchain technology | DATA VALLIS",
-      "description": "Team of experts in blockchain based solutions development, equipped with highly developed skills in software development and business processes."
+      "title": "About the company | DATA VALLIS",
+      "description": "Data Vallis is a Web3 development company from Maribor, Slovenia, building smart contracts, dApps and decentralized infrastructure."
     }
   },
   "news": {
@@ -91,12 +94,13 @@
   },
   "careers": {
     "title": "Wanna stroll with us <br> down the valley of data?",
-    "text": "Then take one of the following paths...",
-    "placeholder": "Oh no, right now we think our team is perfect, but you never know ...",
+    "text": "We don't have open positions right now, but we always like to meet good Web3 people.",
+    "placeholder": "Send us an open application",
     "seo": {
       "title": "IT Jobs – Join the team I DATA VALLIS",
-      "description": "Always searching for new IT professionals to join our team of experts and work on exciting blockchain and other software development projects."
-    }
+      "description": "Work with Data Vallis on Web3 and blockchain projects. Send us an open application."
+    },
+    "email": "info@datavallis.com"
   },
   "contact": {
     "title": "Get in touch & </br> let's talk",
@@ -118,8 +122,9 @@
     "privacyAgreementError": "You must agree to our privacy policy …",
     "seo": {
       "title": "Get in touch | DATA VALLIS",
-      "description": "If you have an idea, a project or a solution, simply get in touch, and we will work with you to create an outstanding blockchain solution."
-    }
+      "description": "Have a Web3 project, a dApp or a smart contract in mind? Get in touch and let's build it together."
+    },
+    "emailLabel": "Prefer email?"
   },
   "pageNotFound": {
     "title": "Got lost exploring and can’t find your way back?",
@@ -128,7 +133,7 @@
   },
   "cookiesMsg": "This website uses cookies to ensure you get the best experience on our website.",
   "seo": {
-    "title": "DATA VALLIS | Blockchain Software Solutions | dApps | Smart Contracts",
-    "description": "Experts in blockchain development services and digital transformation of businesses with more than a decade of experience in providing high-quality solutions."
+    "title": "DATA VALLIS | Web3 Development Company | Smart Contracts, dApps",
+    "description": "Web3 development company from Slovenia. We design and build smart contracts, dApps and decentralized infrastructure for clients, and run Web3 products of our own."
   }
 }

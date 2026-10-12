@@ -15,6 +15,10 @@ export default function Footer() {
           <img src="/assets/images/logo.svg" className="logo" alt="Datavallis logo" />
           <br />
           Maribor, Slovenia
+          <br />
+          <a className="davidtacer-link" href="https://www.davidtacer.com" target="_blank" rel="noopener noreferrer">
+            davidtacer.com
+          </a>
         </div>
 
         <ul>

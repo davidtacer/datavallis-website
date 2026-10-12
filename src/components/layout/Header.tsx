@@ -102,15 +102,6 @@ export default function Header() {
             <TLink href="/careers" onClick={toggleMenu} activeClassName="green-f">
               {t('menu.careers')}
             </TLink>
-            <a
-              className="davidtacer-link"
-              onClick={toggleMenu}
-              href="https://www.davidtacer.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t('menu.davidtacer')}
-            </a>
           </nav>
           <div className="cta" onClick={toggleMenu}>
             <TLink href="/contact" activeClassName="green-f">

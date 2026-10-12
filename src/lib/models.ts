@@ -53,6 +53,12 @@ export interface Product {
   url: string;
   title: string;
   excerpt: string;
+  /** e.g. "Public testnet beta" - only when known */
+  status?: string;
+  /** short facts shown as chips */
+  tags: string[];
+  /** extra links shown under the website link (testnet, documentation, ...) */
+  links?: { label: string; url: string }[];
 }
 
 export interface Technology {

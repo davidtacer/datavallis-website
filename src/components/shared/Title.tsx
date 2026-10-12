@@ -58,12 +58,15 @@ const Title = forwardRef<HTMLDivElement, Props>(function Title(
   return (
     <div className="dv-title" ref={ref}>
       <div className={`content p-l title-content${slideIn ? ' slide-in' : ''}`}>
-        {size === TitleSize.H2 && <h2 dangerouslySetInnerHTML={{ __html: title }} />}
-        {size === TitleSize.H3 && <h3 dangerouslySetInnerHTML={{ __html: title }} />}
+        {/* the page title is the page's h1; the visual size comes from the .h2 / .h3 class */}
+        <h1
+          className={`title-heading ${size === TitleSize.H2 ? 'h2' : 'h3'}`}
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
         <div className="image-wrapper">
           <div className="cursor-block"></div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={background} className={scrolledToTop ? 'bg-reveal' : undefined} alt="valey" />
+          <img src={background} className={scrolledToTop ? 'bg-reveal' : undefined} alt="" />
         </div>
 
         <div className="custom-content">{children}</div>

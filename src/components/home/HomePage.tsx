@@ -8,6 +8,8 @@ import { OVERLAY_ANIMATION_DURATION } from '@/lib/constants';
 import { scrollToAnchor, scrollToPosition } from '@/lib/utils';
 import { useT } from '@/lib/i18n-client';
 import Title from '@/components/shared/Title';
+import TLink from '@/components/shared/TLink';
+import DvLink from '@/components/shared/DvLink';
 import About from './About';
 import Services from './Services';
 import Products from './Products';
@@ -89,7 +91,17 @@ export default function HomePage() {
 
   return (
     <div className="dv-home-page">
-      <Title title={t('home.title')} ref={titleRef} />
+      <Title title={t('home.title')} ref={titleRef}>
+        <div className="dv-home-hero">
+          <p className="h6">{t('home.subtitle')}</p>
+          <div className="ctas">
+            <TLink className="cta-primary" href="/contact">
+              {t('home.ctaPrimary')}
+            </TLink>
+            <DvLink route="/#products" textKey="home.ctaSecondary" open />
+          </div>
+        </div>
+      </Title>
 
       <About onEnter={() => changeFragment('about')} />
       <div className="line"></div>

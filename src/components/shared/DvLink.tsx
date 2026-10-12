@@ -9,17 +9,19 @@ type Props = {
   newTab?: boolean;
   textKey?: string;
   onClick?: () => void;
+  /** always show the text (not only on hover) */
+  open?: boolean;
 };
 
 /**
  * Port of LinkComponent (uppercase text link with animated arrow)
  */
-export default function DvLink({ route, external, newTab, textKey = 'actions.seeMore', onClick }: Props) {
+export default function DvLink({ route, external, newTab, textKey = 'actions.seeMore', onClick, open }: Props) {
   const t = useT();
   const target = newTab ? '_blank' : '_self';
 
   return (
-    <div className="dv-link" onClick={onClick}>
+    <div className={`dv-link${open ? ' open' : ''}`} onClick={onClick}>
       <div className="link-wrapper">
         {route && (
           <TLink href={route} target={target}>
