@@ -1,0 +1,347 @@
+'use client';
+
+import { useState } from 'react';
+import Title, { TitleSize } from '@/components/shared/Title';
+import DvLink from '@/components/shared/DvLink';
+
+/* eslint-disable @next/next/no-img-element */
+
+const BASE = '/media-kit';
+
+const BOILERPLATE_SHORT =
+  'Data Vallis is a Web3 development company from Maribor, Slovenia, building smart contracts, dApps and decentralized infrastructure for clients and for products of its own.';
+
+const BOILERPLATE_LONG =
+  'Data Vallis (DATA VALLIS d.o.o.) is a Web3 development company based in Maribor, Slovenia. For more than a decade the team has been turning complex ideas into working software, and today it focuses on smart contracts, decentralized applications and the infrastructure behind them. Besides client work, Data Vallis designs, launches and runs its own Web3 products: CHERR.IO, a transparent donation platform built on Polygon; PollinationX, a decentralized storage infrastructure layer; W3XShare, encrypted file sharing between wallets; and the PX dApp, a self-custodial decentralized cloud drive.';
+
+type Variant = { file: string; name: string; light?: boolean };
+
+const PRIMARY: Variant = { file: 'datavallis-logo-color', name: 'Primary logo' };
+
+const VARIANTS: Variant[] = [
+  { file: 'datavallis-logo-white', name: 'Horizontal · white' },
+  { file: 'datavallis-logo-black', name: 'Horizontal · black', light: true },
+  { file: 'datavallis-logo-color-on-black', name: 'Horizontal · color on black', light: true },
+  { file: 'datavallis-logo-no-tagline-color', name: 'Without tagline · color' },
+  { file: 'datavallis-logo-no-tagline-white', name: 'Without tagline · white' },
+  { file: 'datavallis-logo-no-tagline-black', name: 'Without tagline · black', light: true },
+  { file: 'datavallis-logo-stacked-color', name: 'Stacked · color' },
+  { file: 'datavallis-logo-stacked-white', name: 'Stacked · white' },
+  { file: 'datavallis-logo-stacked-black', name: 'Stacked · black', light: true },
+  { file: 'datavallis-logo-stacked-color-on-black', name: 'Stacked · color on black', light: true },
+  { file: 'datavallis-icon-color', name: 'Icon · color' },
+  { file: 'datavallis-icon-white', name: 'Icon · white' },
+  { file: 'datavallis-icon-black', name: 'Icon · black', light: true },
+  { file: 'datavallis-icon-color-on-black', name: 'Icon · color on black', light: true },
+  { file: 'datavallis-app-icon', name: 'App / avatar icon', light: true },
+];
+
+const COLORS = [
+  { name: 'Vallis Green', hex: '#84D860', rgb: '132, 216, 96', cmyk: '39, 0, 56, 15', use: 'Primary accent - links, highlights, active states' },
+  { name: 'Emerald', hex: '#1DB682', rgb: '29, 182, 130', cmyk: '84, 0, 29, 29', use: 'Secondary accent - icon, code highlights' },
+  { name: 'Data Yellow', hex: '#FEEF2F', rgb: '254, 239, 47', cmyk: '0, 6, 81, 0', use: '"DATA" in the logotype, small highlights' },
+  { name: 'Sand', hex: '#C3AC86', rgb: '195, 172, 134', cmyk: '0, 12, 31, 24', use: '"VALLIS" in the logotype' },
+  { name: 'Black', hex: '#000000', rgb: '0, 0, 0', cmyk: '0, 0, 0, 100', use: 'Main background' },
+  { name: 'White', hex: '#FFFFFF', rgb: '255, 255, 255', cmyk: '0, 0, 0, 0', use: 'Text on dark' },
+];
+
+const FACTS: [string, React.ReactNode][] = [
+  ['Company', 'DATA VALLIS d.o.o.'],
+  ['Headquarters', 'Maribor, Slovenia'],
+  ['Founder', 'David Tacer'],
+  ['Focus', 'Web3 development - smart contracts, dApps, decentralized infrastructure'],
+  ['Own products', 'CHERR.IO, PollinationX, W3XShare, PX dApp'],
+  ['Website', <a key="w" href="https://datavallis.com">datavallis.com</a>],
+  [
+    'Social',
+    <span key="s">
+      <a href="https://www.linkedin.com/company/data-vallis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      {' · '}
+      <a href="https://x.com/DataVallis" target="_blank" rel="noopener noreferrer">X @DataVallis</a>
+    </span>,
+  ],
+  ['Press contact', <a key="e" href="mailto:info@datavallis.com">info@datavallis.com</a>],
+];
+
+function CopyButton({ text, label = 'Copy' }: { text: string; label?: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      /* clipboard not available */
+    }
+  };
+
+  return (
+    <button type="button" className="copy-button" onClick={copy}>
+      {copied ? 'Copied' : label}
+    </button>
+  );
+}
+
+function Downloads({ file }: { file: string }) {
+  return (
+    <div className="downloads">
+      <a href={`${BASE}/logos/${file}.svg`} download>
+        SVG
+      </a>
+      <a href={`${BASE}/png/${file}.png`} download>
+        PNG
+      </a>
+    </div>
+  );
+}
+
+/**
+ * Media kit + brand guidelines (CGP)
+ */
+export default function MediaKitPage() {
+  return (
+    <div className="dv-media-kit">
+      <Title title="Our brand, <br> your toolkit." size={TitleSize.H3}>
+        <div className="mk-intro">
+          <p className="h6">Logos, colors, typography and the facts you need to write about Data Vallis.</p>
+          <a className="cta-primary" href={`${BASE}/datavallis-media-kit.zip`} download>
+            Download media kit (ZIP)
+          </a>
+        </div>
+      </Title>
+
+      {/* ---------- About ---------- */}
+      <section className="mk-section content">
+        <h2 className="h4 green-f">About Data Vallis</h2>
+
+        <div className="mk-grid">
+          <div className="boilerplate">
+            <div className="label">
+              Short description <CopyButton text={BOILERPLATE_SHORT} />
+            </div>
+            <p>{BOILERPLATE_SHORT}</p>
+
+            <div className="label">
+              Long description <CopyButton text={BOILERPLATE_LONG} />
+            </div>
+            <p>{BOILERPLATE_LONG}</p>
+          </div>
+
+          <dl className="facts">
+            {FACTS.map(([k, v]) => (
+              <div key={k}>
+                <dt>{k}</dt>
+                <dd>{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      <div className="line"></div>
+
+      {/* ---------- Logo ---------- */}
+      <section className="mk-section content">
+        <h2 className="h4 green-f">Logo</h2>
+        <p className="mk-lead">
+          The logo combines the icon - data blocks rising like the hills of a valley, in the shape of Slovenia - with
+          the DATA VALLIS logotype and the tagline Dream · Desire · Develop. Use the files below and never redraw or
+          rebuild the logo.
+        </p>
+
+        <div className="logo-primary">
+          <img src={`${BASE}/logos/${PRIMARY.file}.svg`} alt="Data Vallis logo" />
+          <div className="logo-primary-meta">
+            <span>{PRIMARY.name} · for dark backgrounds</span>
+            <Downloads file={PRIMARY.file} />
+          </div>
+        </div>
+
+        <h3 className="h6 mk-subtitle">Variations</h3>
+        <div className="logo-grid">
+          {VARIANTS.map((v) => (
+            <div className={`logo-card${v.light ? ' light' : ''}`} key={v.file}>
+              <div className="logo-preview">
+                <img src={`${BASE}/logos/${v.file}.svg`} alt={`Data Vallis ${v.name}`} />
+              </div>
+              <div className="logo-meta">
+                <span>{v.name}</span>
+                <Downloads file={v.file} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mk-grid rules">
+          <div>
+            <h3 className="h6 mk-subtitle">Which version to use</h3>
+            <ul className="mk-list">
+              <li>
+                <strong>Color</strong> - the default, on black or very dark backgrounds.
+              </li>
+              <li>
+                <strong>Color on black</strong> - when the background is light or busy (documents, partner pages).
+              </li>
+              <li>
+                <strong>White / black</strong> - one-color printing, engraving, photos and partner logo walls.
+              </li>
+              <li>
+                <strong>Without tagline</strong> - small sizes and tight horizontal spaces.
+              </li>
+              <li>
+                <strong>Stacked</strong> - square or vertical formats.
+              </li>
+              <li>
+                <strong>Icon / app icon</strong> - favicon, social avatars, app icons.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="h6 mk-subtitle">Clear space & minimum size</h3>
+            <div className="clear-space">
+              <div className="clear-space-box">
+                <img src={`${BASE}/logos/datavallis-logo-color.svg`} alt="" />
+              </div>
+              <span className="x x-top">x</span>
+              <span className="x x-left">x</span>
+            </div>
+            <ul className="mk-list">
+              <li>
+                Keep free space of at least <strong>x</strong> around the logo - x is the size of one square of the
+                icon.
+              </li>
+              <li>Horizontal logo: at least 120 px / 30 mm wide.</li>
+              <li>Below 160 px / 40 mm use the version without tagline.</li>
+              <li>Icon: at least 24 px / 6 mm.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="h6 mk-subtitle">Please don&apos;t</h3>
+        <ul className="donts">
+          <li>stretch, squeeze or rotate the logo</li>
+          <li>change the colors or swap DATA and VALLIS colors</li>
+          <li>move, remove or add squares to the icon</li>
+          <li>add shadows, outlines, gradients or other effects</li>
+          <li>place the color logo on light or busy backgrounds</li>
+          <li>retype the logotype in another font</li>
+        </ul>
+      </section>
+
+      <div className="line"></div>
+
+      {/* ---------- Colors ---------- */}
+      <section className="mk-section content">
+        <h2 className="h4 green-f">Colors</h2>
+        <p className="mk-lead">
+          Black is our canvas. Green and emerald carry the brand, yellow and sand appear mainly in the logotype. Use
+          accents sparingly, so they stand out.
+        </p>
+
+        <div className="color-grid">
+          {COLORS.map((c) => (
+            <div className="color-card" key={c.hex}>
+              <div className="swatch" style={{ backgroundColor: c.hex }}></div>
+              <div className="color-meta">
+                <div className="color-name">{c.name}</div>
+                <div className="color-values mono">
+                  <span>
+                    HEX {c.hex} <CopyButton text={c.hex} />
+                  </span>
+                  <span>RGB {c.rgb}</span>
+                  <span>CMYK {c.cmyk}</span>
+                </div>
+                <div className="color-use">{c.use}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="mk-note">CMYK values are approximations - ask your printer for a proof.</p>
+      </section>
+
+      <div className="line"></div>
+
+      {/* ---------- Typography ---------- */}
+      <section className="mk-section content">
+        <h2 className="h4 green-f">Typography</h2>
+
+        <div className="type-grid">
+          <div className="type-card">
+            <div className="type-specimen matchbook">Aa</div>
+            <div className="type-name">Matchbook</div>
+            <p>Display font for big titles and section headlines. Tall, condensed and set large.</p>
+            <div className="type-sample matchbook">Explore our data valley</div>
+          </div>
+          <div className="type-card">
+            <div className="type-specimen proxima">Aa</div>
+            <div className="type-name">Proxima Nova</div>
+            <p>Body text, navigation and UI. Generous letter spacing, uppercase for labels.</p>
+            <div className="type-sample proxima">SMART CONTRACTS · DAPPS · INFRASTRUCTURE</div>
+          </div>
+          <div className="type-card">
+            <div className="type-specimen mono">Aa</div>
+            <div className="type-name">Space Mono</div>
+            <p>Accents with a developer feel - code snippets, data and small details.</p>
+            <div className="type-sample mono">{'{ "status": "VALID" }'}</div>
+          </div>
+        </div>
+        <p className="mk-note">
+          Fonts are licensed separately and are not part of the media kit. Space Mono is free on Google Fonts.
+        </p>
+      </section>
+
+      <div className="line"></div>
+
+      {/* ---------- Visual language ---------- */}
+      <section className="mk-section content">
+        <h2 className="h4 green-f">Visual language & voice</h2>
+
+        <div className="mk-grid">
+          <div>
+            <div className="visual-valley">
+              <img src="/assets/images/bg-exact.webp" alt="" />
+            </div>
+            <ul className="mk-list">
+              <li>
+                <strong>The valley</strong> - the wireframe landscape is our signature visual. Use it full-width, at
+                the bottom, on black.
+              </li>
+              <li>
+                <strong>Outlined titles</strong> - big, outlined Matchbook words as decorative section labels.
+              </li>
+              <li>
+                <strong>Lots of black space</strong> - few elements, large type, thin white lines as dividers.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="outlined-sample">valley</div>
+            <h3 className="h6 mk-subtitle">How we sound</h3>
+            <ul className="mk-list">
+              <li>
+                <strong>Playful headline, precise body.</strong> &ldquo;Not to brag, but we know a lot about this
+                stuff&rdquo; - followed by clear, concrete facts.
+              </li>
+              <li>
+                <strong>Plain words over buzzwords.</strong> Say what we build and why it matters.
+              </li>
+              <li>
+                <strong>Confident, never arrogant.</strong> We show our own products instead of big promises.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div className="line"></div>
+
+      <section className="mk-section content mk-contact">
+        <div className="h6">Need something that isn&apos;t here?</div>
+        <DvLink external="mailto:info@datavallis.com" textKey="info@datavallis.com" open />
+      </section>
+    </div>
+  );
+}

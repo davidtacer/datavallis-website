@@ -58,6 +58,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://datavallis.com/media-kit</loc>
+  <lastmod>2026-10-12T00:00:00+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
   <loc>https://datavallis.com/contact</loc>
   <lastmod>2022-04-12T13:44:00+00:00</lastmod>
   <priority>0.80</priority>
