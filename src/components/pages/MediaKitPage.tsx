@@ -63,6 +63,48 @@ const FACTS: [string, React.ReactNode][] = [
   ['Press contact', <a key="e" href="mailto:info@datavallis.com">info@datavallis.com</a>],
 ];
 
+/** Exact clear-space diagram: x = one square of the icon (12.13 of 243 logo units) */
+function ClearSpaceDiagram() {
+  const W = 243;
+  const H = 55.88;
+  const X = 12.13;
+  const L = 26; // room for the left label
+  const T = 22; // room for the top label
+  const boxW = W + 2 * X;
+  const boxH = H + 2 * X;
+  const vbW = L + boxW + 4;
+  const vbH = T + boxH + 4;
+  const sq = { fill: 'rgba(132, 216, 96, 0.28)', stroke: '#84d860', strokeWidth: 0.4 };
+
+  return (
+    <svg
+      className="clear-space"
+      viewBox={`0 0 ${vbW} ${vbH}`}
+      role="img"
+      aria-label="Clear space around the logo equals one square of the icon on every side"
+    >
+      {/* clear-space boundary */}
+      <rect x={L} y={T} width={boxW} height={boxH} fill="none" stroke="#84d860" strokeWidth="0.6" strokeDasharray="2 1.5" />
+      {/* logo bounds */}
+      <rect x={L + X} y={T + X} width={W} height={H} fill="none" stroke="rgba(255,255,255,0.35)" strokeWidth="0.4" />
+      <image href={`${BASE}/logos/datavallis-logo-color.svg`} x={L + X} y={T + X} width={W} height={H} />
+
+      {/* x markers on all four sides */}
+      <rect x={L + X} y={T} width={X} height={X} {...sq} />
+      <rect x={L + X + W - X} y={T + X + H} width={X} height={X} {...sq} />
+      <rect x={L} y={T + X} width={X} height={X} {...sq} />
+      <rect x={L + X + W} y={T + X + H - X} width={X} height={X} {...sq} />
+
+      <text x={L + X + X / 2} y={T - 6} textAnchor="middle" className="x-label">
+        x
+      </text>
+      <text x={L - 8} y={T + X + X / 2 + 3} textAnchor="middle" className="x-label">
+        x
+      </text>
+    </svg>
+  );
+}
+
 function CopyButton({ text, label = 'Copy' }: { text: string; label?: string }) {
   const [copied, setCopied] = useState(false);
 
@@ -201,13 +243,7 @@ export default function MediaKitPage() {
 
           <div>
             <h3 className="h6 mk-subtitle">Clear space & minimum size</h3>
-            <div className="clear-space">
-              <div className="clear-space-box">
-                <img src={`${BASE}/logos/datavallis-logo-color.svg`} alt="" />
-              </div>
-              <span className="x x-top">x</span>
-              <span className="x x-left">x</span>
-            </div>
+            <ClearSpaceDiagram />
             <ul className="mk-list">
               <li>
                 Keep free space of at least <strong>x</strong> around the logo - x is the size of one square of the
