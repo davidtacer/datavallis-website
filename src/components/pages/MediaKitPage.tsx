@@ -14,26 +14,26 @@ const BOILERPLATE_SHORT =
 const BOILERPLATE_LONG =
   'Data Vallis (DATA VALLIS d.o.o.) is a Web3 development company based in Maribor, Slovenia. For more than a decade the team has been turning complex ideas into working software, and today it focuses on smart contracts, decentralized applications and the infrastructure behind them. Besides client work, Data Vallis designs, launches and runs its own Web3 products: CHERR.IO, a transparent donation platform built on Polygon; PollinationX, a decentralized storage infrastructure layer; W3XShare, encrypted file sharing between wallets; and the PX dApp, a self-custodial decentralized cloud drive.';
 
-type Variant = { file: string; name: string; light?: boolean };
+type Variant = { file: string; name: string; desc?: string; light?: boolean };
 
 const PRIMARY: Variant = { file: 'datavallis-logo-color', name: 'Primary logo' };
 
 const VARIANTS: Variant[] = [
-  { file: 'datavallis-logo-white', name: 'Horizontal · white' },
-  { file: 'datavallis-logo-black', name: 'Horizontal · black', light: true },
-  { file: 'datavallis-logo-color-on-black', name: 'Horizontal · color on black', light: true },
-  { file: 'datavallis-logo-no-tagline-color', name: 'Without tagline · color' },
-  { file: 'datavallis-logo-no-tagline-white', name: 'Without tagline · white' },
-  { file: 'datavallis-logo-no-tagline-black', name: 'Without tagline · black', light: true },
-  { file: 'datavallis-logo-stacked-color', name: 'Stacked · color' },
-  { file: 'datavallis-logo-stacked-white', name: 'Stacked · white' },
-  { file: 'datavallis-logo-stacked-black', name: 'Stacked · black', light: true },
-  { file: 'datavallis-logo-stacked-color-on-black', name: 'Stacked · color on black', light: true },
-  { file: 'datavallis-icon-color', name: 'Icon · color' },
-  { file: 'datavallis-icon-white', name: 'Icon · white' },
-  { file: 'datavallis-icon-black', name: 'Icon · black', light: true },
-  { file: 'datavallis-icon-color-on-black', name: 'Icon · color on black', light: true },
-  { file: 'datavallis-app-icon', name: 'App / avatar icon', light: true },
+  { file: 'datavallis-logo-white', name: 'Horizontal · white', desc: 'One-color version for dark photos, videos and dark partner pages.' },
+  { file: 'datavallis-logo-black', name: 'Horizontal · black', desc: 'For white documents, print and partner logo walls on light backgrounds.', light: true },
+  { file: 'datavallis-logo-color-on-black', name: 'Horizontal · color on black', desc: 'Keeps the full brand colors on light or busy backgrounds.', light: true },
+  { file: 'datavallis-logo-no-tagline-color', name: 'Without tagline · color', desc: 'For small sizes, website headers and tight horizontal spaces.' },
+  { file: 'datavallis-logo-no-tagline-white', name: 'Without tagline · white', desc: 'Small one-color use on dark backgrounds, e.g. video overlays.' },
+  { file: 'datavallis-logo-no-tagline-black', name: 'Without tagline · black', desc: 'Small one-color use on light backgrounds, e.g. footers of documents.', light: true },
+  { file: 'datavallis-logo-stacked-color', name: 'Stacked · color', desc: 'For square and vertical formats: posters, roll-ups, social posts.' },
+  { file: 'datavallis-logo-stacked-white', name: 'Stacked · white', desc: 'Square formats on dark photos and one-color printing.' },
+  { file: 'datavallis-logo-stacked-black', name: 'Stacked · black', desc: 'Square formats on light backgrounds, stamps and engraving.', light: true },
+  { file: 'datavallis-logo-stacked-color-on-black', name: 'Stacked · color on black', desc: 'Square color badge for light backgrounds, e.g. sponsor boards.', light: true },
+  { file: 'datavallis-icon-color', name: 'Icon · color', desc: 'When the name is already visible nearby, or as a graphic accent.' },
+  { file: 'datavallis-icon-white', name: 'Icon · white', desc: 'Watermarks and small one-color marks on dark backgrounds.' },
+  { file: 'datavallis-icon-black', name: 'Icon · black', desc: 'Watermarks and small one-color marks on light backgrounds.', light: true },
+  { file: 'datavallis-icon-color-on-black', name: 'Icon · color on black', desc: 'Compact color mark for light backgrounds.', light: true },
+  { file: 'datavallis-app-icon', name: 'App / avatar icon', desc: 'Social media profile pictures, app icons and favicons.', light: true },
 ];
 
 const COLORS = [
@@ -153,7 +153,7 @@ export default function MediaKitPage() {
         <div className="logo-primary">
           <img src={`${BASE}/logos/${PRIMARY.file}.svg`} alt="Data Vallis logo" />
           <div className="logo-primary-meta">
-            <span>{PRIMARY.name} · for dark backgrounds</span>
+            <span>{PRIMARY.name} · the default version, for black and dark backgrounds</span>
             <Downloads file={PRIMARY.file} />
           </div>
         </div>
@@ -169,6 +169,7 @@ export default function MediaKitPage() {
                 <span>{v.name}</span>
                 <Downloads file={v.file} />
               </div>
+              {v.desc && <p className="logo-desc">{v.desc}</p>}
             </div>
           ))}
         </div>
@@ -228,6 +229,144 @@ export default function MediaKitPage() {
           <li>place the color logo on light or busy backgrounds</li>
           <li>retype the logotype in another font</li>
         </ul>
+      </section>
+
+      <div className="line"></div>
+
+      {/* ---------- Usage examples ---------- */}
+      <section className="mk-section content">
+        <h2 className="h4 green-f">Usage examples</h2>
+        <p className="mk-lead">
+          How the logo variations work in real life. Pick the version by the background and the space you have - the
+          examples show the most common cases.
+        </p>
+
+        <div className="example-grid">
+          <figure className="example wide">
+            <div className="ex-website">
+              <div className="ex-browser-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+                <div className="ex-tab">
+                  <img src={`${BASE}/logos/datavallis-app-icon.svg`} alt="" />
+                  Data Vallis
+                </div>
+              </div>
+              <div className="ex-site">
+                <div className="ex-site-header">
+                  <img src={`${BASE}/logos/datavallis-logo-no-tagline-color.svg`} alt="" />
+                  <div className="ex-nav">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                </div>
+                <div className="ex-site-title">We build Web3 products.</div>
+              </div>
+            </div>
+            <figcaption>
+              <strong>Website & favicon</strong>Logo without tagline in the header, app icon as the favicon.
+            </figcaption>
+          </figure>
+
+          <figure className="example">
+            <div className="ex-social">
+              <div className="ex-social-banner">
+                <img src={`${BASE}/logos/datavallis-logo-color.svg`} alt="" />
+              </div>
+              <div className="ex-social-avatar">
+                <img src={`${BASE}/logos/datavallis-app-icon.svg`} alt="" />
+              </div>
+              <div className="ex-social-name">
+                Data Vallis
+                <span>@DataVallis</span>
+              </div>
+            </div>
+            <figcaption>
+              <strong>Social profiles</strong>App icon as the profile picture, primary logo on the banner.
+            </figcaption>
+          </figure>
+
+          <figure className="example">
+            <div className="ex-cards">
+              <div className="ex-card front">
+                <img src={`${BASE}/logos/datavallis-logo-color.svg`} alt="" />
+              </div>
+              <div className="ex-card back">
+                <img src={`${BASE}/logos/datavallis-icon-black.svg`} alt="" />
+                <div className="ex-card-lines">
+                  <b>Name Surname</b>
+                  <i>Role</i>
+                  <i>info@datavallis.com</i>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <strong>Business cards</strong>Color logo on the black front, black icon on the white back.
+            </figcaption>
+          </figure>
+
+          <figure className="example">
+            <div className="ex-slide">
+              <div className="ex-slide-title">Smart contracts, dApps & infrastructure</div>
+              <img src={`${BASE}/logos/datavallis-logo-no-tagline-color.svg`} alt="" />
+            </div>
+            <figcaption>
+              <strong>Presentations</strong>Black slides, Matchbook titles, small logo without tagline in the corner.
+            </figcaption>
+          </figure>
+
+          <figure className="example">
+            <div className="ex-wall">
+              <div className="ex-wall-title">Partners</div>
+              <div className="ex-wall-grid">
+                <div className="ex-partner"></div>
+                <div className="ex-partner dv">
+                  <img src={`${BASE}/logos/datavallis-logo-black.svg`} alt="" />
+                </div>
+                <div className="ex-partner"></div>
+                <div className="ex-partner"></div>
+                <div className="ex-partner"></div>
+                <div className="ex-partner"></div>
+              </div>
+            </div>
+            <figcaption>
+              <strong>Partner & sponsor walls</strong>On light backgrounds use the black logo, so it sits evenly
+              with other logos.
+            </figcaption>
+          </figure>
+
+          <figure className="example">
+            <div className="ex-doc">
+              <div className="ex-doc-head">
+                <img src={`${BASE}/logos/datavallis-logo-black.svg`} alt="" />
+              </div>
+              <div className="ex-doc-lines">
+                <i></i>
+                <i></i>
+                <i className="short"></i>
+                <i></i>
+                <i className="short"></i>
+              </div>
+            </div>
+            <figcaption>
+              <strong>Documents & offers</strong>Black logo on white paper, or color on black for a cover page.
+            </figcaption>
+          </figure>
+
+          <figure className="example">
+            <div className="ex-poster">
+              <img src={`${BASE}/logos/datavallis-logo-stacked-color.svg`} alt="" />
+              <div className="ex-poster-valley">
+                <img src="/assets/images/bg-exact.webp" alt="" />
+              </div>
+            </div>
+            <figcaption>
+              <strong>Posters & roll-ups</strong>Stacked logo for vertical formats, the valley at the bottom.
+            </figcaption>
+          </figure>
+        </div>
       </section>
 
       <div className="line"></div>
