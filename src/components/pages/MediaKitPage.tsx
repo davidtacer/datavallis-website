@@ -48,7 +48,19 @@ const COLORS = [
 const FACTS: [string, React.ReactNode][] = [
   ['Company', 'DATA VALLIS d.o.o.'],
   ['Headquarters', 'Maribor, Slovenia'],
-  ['Founder', 'David Tacer'],
+  [
+    'Founder',
+    <span key="f">
+      David Tacer -{' '}
+      <a href="https://www.linkedin.com/in/davidtacer/" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>
+      {' · '}
+      <a href="https://x.com/TacerDavid" target="_blank" rel="noopener noreferrer">
+        X @TacerDavid
+      </a>
+    </span>,
+  ],
   ['Focus', 'Web3 development - smart contracts, dApps, decentralized infrastructure'],
   ['Own products', 'CHERR.IO, PollinationX, W3XShare, PX dApp'],
   ['Website', <a key="w" href="https://datavallis.com">datavallis.com</a>],

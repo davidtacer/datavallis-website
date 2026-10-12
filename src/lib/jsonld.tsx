@@ -51,7 +51,9 @@ export const organizationJsonLd = (): Json => ({
   founder: {
     '@type': 'Person',
     name: 'David Tacer',
+    jobTitle: 'Founder',
     url: 'https://www.davidtacer.com',
+    sameAs: ['https://www.davidtacer.com', 'https://www.linkedin.com/in/davidtacer/', 'https://x.com/TacerDavid'],
   },
   sameAs: ['https://www.linkedin.com/company/data-vallis/', 'https://x.com/DataVallis'],
   contactPoint: {

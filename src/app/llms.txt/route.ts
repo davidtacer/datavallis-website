@@ -15,7 +15,7 @@ export function GET() {
     '',
     '> Data Vallis (DATA VALLIS d.o.o.) is a Web3 development company from Maribor, Slovenia. It designs and builds smart contracts, decentralized applications (dApps) and decentralized infrastructure for clients, and runs Web3 products of its own: CHERR.IO, PollinationX, W3XShare and the PX dApp.',
     '',
-    '- Founder: David Tacer',
+    '- Founder: David Tacer (https://www.davidtacer.com, https://www.linkedin.com/in/davidtacer/, https://x.com/TacerDavid)',
     '- Headquarters: Ulica Šercerjeve brigade 5, 2000 Maribor, Slovenia',
     '- Contact: info@datavallis.com',
     '- Website: ' + SITE_URL,
