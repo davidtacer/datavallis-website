@@ -46,6 +46,6 @@ src/styles/               original global SCSS + component styles
 - The article request keeps the original URL format `/news/undefined/:slug` (typo `params.caregory` in Angular),
   so the API behaves exactly as before.
 - **Contact form** posts to `/api/contact` (server). It upserts the Klaviyo profile (name, company, message),
-  adds it to `KLAVIYO_LIST_ID` (without marketing consent) and tracks a `Contact Form Submitted` event,
+  subscribes it to email marketing on `KLAVIYO_LIST_ID` (consent = GDPR checkbox) and tracks a `Contact Form Submitted` event,
   which can trigger a Klaviyo flow (e.g. notify info@datavallis.com).
 - `/sitemap.xml`, `/robots.txt` and the Google Analytics tag are unchanged.

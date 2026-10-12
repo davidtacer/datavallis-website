@@ -50,7 +50,7 @@ export type ContactSubmission = {
 
 /**
  * 1. creates / updates the profile (name, company, last message)
- * 2. adds the profile to the contact list (no marketing consent is implied)
+ * 2. subscribes the profile to email marketing on the contact list (consent given with the GDPR checkbox)
  * 3. tracks a "Contact Form Submitted" event, so a Klaviyo flow can notify the team / reply
  */
 export async function saveContactSubmission({ email, name, company, message }: ContactSubmission): Promise<void> {
@@ -73,8 +73,28 @@ export async function saveContactSubmission({ email, name, company, message }: C
 
   const profileId: string = profile.data.id;
 
-  await request(`/lists/${listId}/relationships/profiles`, {
-    data: [{ type: 'profile', id: profileId }],
+  // the form can only be sent after agreeing to the privacy policy (GDPR checkbox) -> subscribe to email marketing
+  await request('/profile-subscription-bulk-create-jobs', {
+    data: {
+      type: 'profile-subscription-bulk-create-job',
+      attributes: {
+        custom_source: 'datavallis.com contact form',
+        profiles: {
+          data: [
+            {
+              type: 'profile',
+              attributes: {
+                email,
+                subscriptions: { email: { marketing: { consent: 'SUBSCRIBED' } } },
+              },
+            },
+          ],
+        },
+      },
+      relationships: {
+        list: { data: { type: 'list', id: listId } },
+      },
+    },
   });
 
   await request('/events', {
