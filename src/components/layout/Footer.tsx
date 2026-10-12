@@ -74,6 +74,8 @@ export default function Footer() {
         <TLink href="/privacy-policy">{t('menu.privacyPolicy')}</TLink>
         <strong>|</strong>
         <TLink href="/legal-notice">{t('menu.legalNotice')}</TLink>
+        <strong>|</strong>
+        <TLink href="/media-kit">Media kit</TLink>
       </div>
     </div>
   );

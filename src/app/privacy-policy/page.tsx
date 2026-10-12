@@ -1,7 +1,11 @@
 import Page from '@/components/shared/Page';
-import { seo } from '@/lib/seo';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata = seo();
+export const metadata = pageMetadata({
+  title: 'Privacy Policy | DATA VALLIS',
+  description: 'How DATA VALLIS d.o.o. collects, uses and protects personal data of visitors and users of datavallis.com.',
+  path: '/privacy-policy',
+});
 
 export default function PrivacyPolicyPage() {
   return (

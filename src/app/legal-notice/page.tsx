@@ -1,8 +1,12 @@
 import Page from '@/components/shared/Page';
 import TLink from '@/components/shared/TLink';
-import { seo } from '@/lib/seo';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata = seo();
+export const metadata = pageMetadata({
+  title: 'Legal Notice | DATA VALLIS',
+  description: 'Company details, terms of use, liability and intellectual property for datavallis.com - DATA VALLIS d.o.o., Maribor, Slovenia.',
+  path: '/legal-notice',
+});
 
 export default function LegalNoticePage() {
   return (

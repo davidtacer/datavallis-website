@@ -49,3 +49,12 @@ src/styles/               original global SCSS + component styles
   subscribes it to email marketing on `KLAVIYO_LIST_ID` (consent = GDPR checkbox) and tracks a `Contact Form Submitted` event,
   which can trigger a Klaviyo flow (e.g. notify info@datavallis.com).
 - `/sitemap.xml`, `/robots.txt` and the Google Analytics tag are unchanged.
+
+## SEO & AI search
+
+- Every page sets its own title, description, canonical URL, Open Graph and Twitter card via `pageMetadata()` (`src/lib/seo.ts`).
+- Share images (1200×630) live in `public/og/`; regenerate them with `node scripts/make_og.js` after changing headlines.
+- Structured data (schema.org JSON-LD) in `src/lib/jsonld.tsx`: Organization, WebSite, products (SoftwareApplication), breadcrumbs, page types.
+- `/sitemap.xml`, `/robots.txt` (AI crawlers explicitly allowed), `/manifest.webmanifest` and `/llms.txt` are generated from the site data in `src/app/`.
+- The hidden news section is marked `noindex`.
+- Logo variations for the media kit: `python3 scripts/make_logos.py public/assets/images/logo.svg public/media-kit/logos`.

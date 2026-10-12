@@ -1,14 +1,48 @@
+import type { Metadata } from 'next';
 import ExperiencePage from '@/components/pages/ExperiencePage';
 import { EXPERIENCES } from '@/lib/data/experiences';
-import { seo } from '@/lib/seo';
+import { pageMetadata, seo, truncate } from '@/lib/seo';
+import { breadcrumbJsonLd, JsonLd } from '@/lib/jsonld';
 
-export const metadata = seo('experience.seo.title', 'experience.seo.description');
+type Params = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return EXPERIENCES.map((experience) => ({ slug: experience.slug }));
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
-  return <ExperiencePage slug={slug} key={slug} />;
+  const experience = EXPERIENCES.find((e) => e.slug === slug);
+
+  if (!experience) {
+    return seo('experience.seo.title', 'experience.seo.description', '/experience', 'experience');
+  }
+
+  return pageMetadata({
+    title: `${experience.linkDescription}: use cases | DATA VALLIS`,
+    description: truncate(experience.excerpt),
+    path: `/experience/${slug}`,
+    image: `experience-${slug}`,
+    type: 'article',
+  });
+}
+
+export default async function Page({ params }: Params) {
+  const { slug } = await params;
+  const experience = EXPERIENCES.find((e) => e.slug === slug);
+
+  return (
+    <>
+      {experience && (
+        <JsonLd
+          data={breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Experience', path: '/experience' },
+            { name: experience.title, path: `/experience/${slug}` },
+          ])}
+        />
+      )}
+      <ExperiencePage slug={slug} key={slug} />
+    </>
+  );
 }
