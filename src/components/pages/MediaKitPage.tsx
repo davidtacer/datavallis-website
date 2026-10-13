@@ -356,11 +356,12 @@ export default function MediaKitPage() {
                     Data Vallis <small>d.o.o.</small>
                   </div>
                   <div className="bc-line">Programske rešitve / Software solutions</div>
-                  <div className="bc-line">Tržaška cesta 40, 2000 Maribor, Slovenia, EU</div>
+                  <div className="bc-line">Ulica Šercerjeve brigade 5</div>
+                  <div className="bc-line">2000 Maribor, Slovenia, EU</div>
                 </div>
                 <div className="bc-contact">
-                  <div>+386 40 221 931</div>
-                  <div>david@datavallis.com</div>
+                  <div>+386 40 000 000</div>
+                  <div>info@datavallis.com</div>
                   <div>www.datavallis.com</div>
                 </div>
                 <img className="bc-back-icon" src={`${BASE}/logos/datavallis-icon-color.svg`} alt="" />
