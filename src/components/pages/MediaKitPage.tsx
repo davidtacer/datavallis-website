@@ -339,19 +339,36 @@ export default function MediaKitPage() {
           <figure className="example">
             <div className="ex-cards">
               <div className="ex-card front">
-                <img src={`${BASE}/logos/datavallis-logo-color.svg`} alt="" />
+                <div className="bc-logo">
+                  <img className="bc-icon" src={`${BASE}/logos/datavallis-icon-color.svg`} alt="" />
+                  <div className="bc-wordmark">
+                    <img src={`${BASE}/logos/datavallis-logo-color.svg`} alt="" />
+                  </div>
+                </div>
               </div>
               <div className="ex-card back">
-                <img src={`${BASE}/logos/datavallis-icon-black.svg`} alt="" />
-                <div className="ex-card-lines">
-                  <b>Name Surname</b>
-                  <i>Role</i>
-                  <i>info@datavallis.com</i>
+                <div className="bc-person">
+                  <div className="bc-name">David Tacer</div>
+                  <div className="bc-role">Direktor / CEO</div>
                 </div>
+                <div className="bc-company">
+                  <div className="bc-name">
+                    Data Vallis <small>d.o.o.</small>
+                  </div>
+                  <div className="bc-line">Programske rešitve / Software solutions</div>
+                  <div className="bc-line">Tržaška cesta 40, 2000 Maribor, Slovenia, EU</div>
+                </div>
+                <div className="bc-contact">
+                  <div>+386 40 221 931</div>
+                  <div>david@datavallis.com</div>
+                  <div>www.datavallis.com</div>
+                </div>
+                <img className="bc-back-icon" src={`${BASE}/logos/datavallis-icon-color.svg`} alt="" />
               </div>
             </div>
             <figcaption>
-              <strong>Business cards</strong>Color logo on the black front, black icon on the white back.
+              <strong>Business cards</strong>Premium dark grey paper with foil print on both sides: the logo on the
+              front; name, company, contact and the icon on the back. 89 × 54 mm.
             </figcaption>
           </figure>
 
