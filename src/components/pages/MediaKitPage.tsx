@@ -336,39 +336,16 @@ export default function MediaKitPage() {
             </figcaption>
           </figure>
 
-          <figure className="example">
+          <figure className="example tall">
             <div className="ex-cards">
-              <div className="ex-card front">
-                <div className="bc-logo">
-                  <img className="bc-icon" src={`${BASE}/logos/datavallis-icon-color.svg`} alt="" />
-                  <div className="bc-wordmark">
-                    <img src={`${BASE}/logos/datavallis-logo-color.svg`} alt="" />
-                  </div>
-                </div>
-              </div>
-              <div className="ex-card back">
-                <div className="bc-person">
-                  <div className="bc-name">David Tacer</div>
-                  <div className="bc-role">Direktor / CEO</div>
-                </div>
-                <div className="bc-company">
-                  <div className="bc-name">
-                    Data Vallis <small>d.o.o.</small>
-                  </div>
-                  <div className="bc-line">Programske rešitve / Software solutions</div>
-                  <div className="bc-line">Ulica Šercerjeve brigade 5</div>
-                  <div className="bc-line">2000 Maribor, Slovenia, EU</div>
-                </div>
-                <div className="bc-contact">
-                  <div>+386 40 000 000</div>
-                  <div>info@datavallis.com</div>
-                  <div>www.datavallis.com</div>
-                </div>
-                <img className="bc-back-icon" src={`${BASE}/logos/datavallis-icon-color.svg`} alt="" />
-              </div>
+              <img
+                src={`${BASE}/examples/business-cards.jpg`}
+                alt="Data Vallis business cards: logo on the front; name, company, contact and icon on the back"
+                loading="lazy"
+              />
             </div>
             <figcaption>
-              <strong>Business cards</strong>Premium dark grey paper with foil print on both sides: the logo on the
+              <strong>Business cards</strong>Dark grey premium paper with foil print on both sides: the logo on the
               front; name, company, contact and the icon on the back. 89 × 54 mm.
             </figcaption>
           </figure>
